@@ -28,7 +28,18 @@ logout(){
   console.log(`${this.email}, is logged out`)
 }
 }
-console.log(userTwo.logout());
+//To change property of an object
+userTwo.name = "Kelvin";
+console.log(userTwo.name);
+//prints out Kelvin
+userTwo["name"] = "Kunle";
+console.log(userTwo["name"]);
+//prints out Kunle
+
+//Another way to access the property of an object is by using [] ;
+console.log(userTwo["email"]);
+//prints out ketu@hotmail.com
+
 
 
 
