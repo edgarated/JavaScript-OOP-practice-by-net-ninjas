@@ -1,57 +1,27 @@
-//CLASS CONTRUCTORS
+//CLASS METHODS
 
-//Example 1
+//Example 
 class User{
-constructor(name, email){
+
+  constructor(name, email){
 this.name = name;
 this.email = email;
-
-
-}
-
-}
-const firstOne = new User("kunle" , "ojota@yahoo.com");
-const secondTwo = new User("ekaboo" , "kunfulee@gmail.com")
-console.log(firstOne);
-console.log(secondTwo)
-
-
-//Example 2
-class Detail {
-constructor(name, email,location,age){
-
-this.name = name;
-this.email = email;
-this.location = location;
-this.age = age;
-
-}
-
-}
-const userOne = new Detail("Kunle", "kunle22@hotmail.com", "lagos", 44);
-const userTwo = new Detail("Matthew", "Matt232@outlook.com", "Kano", 23);
-const userThree = new Detail("Mary", "maryonyeali@gmail.com", "Abakaliki", 24);
-console.log(userOne);
-console.log(userTwo);
-console.log(userThree);
-
-
-//Example 3
-class Profile{
-
-  constructor(name,positon,country,club){
-this.name = name;
-this.positon =positon;
-this.country = country;
-this.club = club;
-
+  }
+  login(){
+    console.log(`The user with ${this.email} just logged in now`)
+  };
+  logout(){
+    console.log(`The user with ${this.email} just logged out now`)
+  }
+  fullName(){
+    console.log(`The user ${this.name} is not in our record`);
   }
 }
 
-const playerOne = new Profile("Messi" , "Attacker", "Argentina", "Barcelona");
-const playerTwo = new Profile("Ronaldo", "Attacker","Portugal","Juventus");
-const playerThree = new Profile("Hazard", "Attacker", "Belgium", "Chelsea");
+const userOne = new User("Ebuka", "chukwuebukaaneke@outlook.com");
+const userTwo = new User("Ginika", "prettyginika06@gmail.com");
 
-console.log(playerOne)
-console.log(playerTwo)
-console.log(playerThree)
+userOne.login();
+userTwo.logout();
+userOne.fullName();
+
