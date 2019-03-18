@@ -1,6 +1,6 @@
-//METHOD CHAINING
+// //CLASS INHERITANCE
 
-//Example 1
+// //Example 1
 
 class User{
 
@@ -30,36 +30,32 @@ updateScore(){
   return this;
 }
 }
-const userOne = new User ("kingsley" , "kingsley222@gmail.com", "kenya");
-const userTwo = new User ("Ebuka" , "ebuka@outlook.com", "Abuja");
 
-userOne.login().logout().hot().updateScore();
-userTwo.updateScore()
-userTwo.updateScore()
-userTwo.updateScore()
-userTwo.updateScore()
+// userOne.login().logout().hot().updateScore();
+// userTwo.updateScore()
+// userTwo.updateScore()
+// userTwo.updateScore()
+// userTwo.updateScore()
 
-
-//Example 2
-
-class Hope{
-
-  constructor(subject,name){
-this.subject = subject;
-this.name = name;
-this.score = 0;
-  }
-  updateScore(){
-    this.score++
-    console.log(`${this.subject} ${this.score}`);
-    return this;
-  }
-  names(){
-    console.log(`${this.name} is not a good man`)
-    return this;
-  }
+class Admin extends User{
+  
+deleteUser(user){
+  users = users.filter(u =>{
+   return u.email != user.email;
+  })
 }
 
-const userOne = new Hope("Mathematics", "tunde");
 
-userOne.names().updateScore();
+}
+
+
+
+const userOne = new User ("kingsley" , "kingsley222@gmail.com", "kenya");
+const userTwo = new User ("Ebuka" , "ebuka@outlook.com", "Abuja");
+const admin = new Admin ("Adaobi", "Adaobi@gmail.com");
+
+let users = [ userOne , userTwo , admin]
+
+
+admin.deleteUser(userOne)
+console.log(users);
