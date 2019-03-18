@@ -1,23 +1,23 @@
-//CONSTRUCTORS UNDER THE HOOD
+//OBJECT PROTOTYPE
 
 function User( name , email, location){
 this.name = name;
 this.email = email;
 this.location = location;
 
-this.logout = function(){
+
+User.prototype.logout = function(){
  console.log(`${this.email} just logged out`)
  return this;
 
 }
 
 
-this.login = function(){
+User.prototype.login = function(){
   console.log(`${this.email} just logged in`)
   return this;
  
  }
-
 }
 
 const userOne = new User ("kingsley" , "kingsley222@gmail.com", "kenya");
