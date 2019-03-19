@@ -1,30 +1,46 @@
-//OBJECT PROTOTYPE
+//PROTOTYPE INHERTANCE
 
-function User( name , email, location){
-this.name = name;
+function User(name, email){
+this.name =name;
 this.email = email;
-this.location = location;
-
-
-User.prototype.logout = function(){
- console.log(`${this.email} just logged out`)
- return this;
-
-}
-
-
-User.prototype.login = function(){
+this.login = function(){
   console.log(`${this.email} just logged in`)
-  return this;
- 
- }
+}
+this.logout = function(){
+  console.log(`${this.email} just logged out`)
 }
 
-const userOne = new User ("kingsley" , "kingsley222@gmail.com", "kenya");
-const userTwo = new User ("Ebuka" , "ebuka@outlook.com", "Abuja");
+}
 
-userOne.logout().login()
-// kingsley222@gmail.com just logged out
-// kingsley222@gmail.com just logged in
+
+function Admin(...args){
+User.apply(this, args )
+this.role = "super admin"
+}
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function(user){
+ users = users.filter(u => {
+return user.email != u.email;
+
+ })
+
+}
+
+
+const userOne = new User("Benson", "benjgmail.com");
+const userTwo = new User("Amara", "Amaraocha@yahoo.com");
+const admin = new Admin("yinka", "yinka@gmail.com");
+
+let users = [userOne, userTwo, admin]
+
+
+console.log(users);
+admin.deleteUser(userOne);
+console.log(users);
+
+
+
+
 
 
